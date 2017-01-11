@@ -1,0 +1,12 @@
+com\mall\repositories\AddressRepository.class
+com\mall\services\AddressService.class
+com\mall\controllers\UserController.class
+com\mall\entities\UserEntity.class
+com\mall\dtos\AddressDTO.class
+com\mall\repositoryImpl\AddressRepositoryImpl.class
+com\mall\services\UserService.class
+com\mall\repositories\UserRepository.class
+com\mall\repositoryImpl\UserRepositoryImpl.class
+com\mall\entities\AddressEntity.class
+com\mall\dtos\UserDTO.class
+com\mall\serviceImpls\UserServiceImpl.class
