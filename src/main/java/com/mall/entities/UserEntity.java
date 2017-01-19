@@ -3,6 +3,7 @@ package com.mall.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,7 +25,7 @@ public class UserEntity {
 	private String password;
 	private String gender;
 
-	@OneToMany(mappedBy = "userEntity",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "userEntity",fetch=FetchType.EAGER,cascade=CascadeType.REMOVE)
 	private List<AddressEntity> addressEntityList = new ArrayList<>();
 
 	public Long getId() {

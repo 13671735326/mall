@@ -2,7 +2,6 @@ package com.mall.repositories;
 
 import java.util.List;
 
-import com.mall.dtos.AddressDTO;
 import com.mall.entities.AddressEntity;
 import com.mall.entities.UserEntity;
 
@@ -18,8 +17,12 @@ public interface UserRepository {
 
 	public List<UserEntity> getUsers();
 
+	public List<UserEntity> getPagedUsers(Integer currentPage, Integer pageSize);
+
 	public UserEntity getUser(Long idUser);
 
 	public List<AddressEntity> getUserAddresses(Long id);
+
+	public UserEntity getUserByName(String userName);
 
 }

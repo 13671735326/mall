@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User</title>
+<link rel="stylesheet" type="text/css"
+	href="lib\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css\table.css">
+</head>
+<body>
+	<div class="container">
+		<h1>
+			User Profile<small>Secondary text</small>
+		</h1>
+
+		<table id="table" class="table table-condensed">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nick name</th>
+					<th>gender</th>
+					<th>Email</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Id</td>
+					<td>Nick name</td>
+					<td>gender</td>
+					<td>Email</td>
+				</tr>
+			</tbody>
+
+		</table>
+
+		<div class="btn-toolbar" role="toolbar" id="abc">
+			<div class="btn-group" id="abc">
+				<button type="button" class="btn btn-default" id="botton"></button>
+				<div id="pages"></div>
+			</div>
+
+		</div>
+		
+	</div>
+
+	<script src="lib\jquery3.1.1\jquery-3.1.1.min.js"></script>
+	<script src="lib\bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
+	<script src="js\u.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			getUsers();
+
+		});
+	</script>
+
+</body>
+</html>

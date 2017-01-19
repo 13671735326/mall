@@ -1,14 +1,23 @@
 package com.mall.dtos;
 
+import javax.validation.constraints.NotNull;
+
 public class UserDTO {
 
 	private long id;
+	
+	@NotNull
 	private String nickName;
+	
 	private String email;
+	
 	private String password;
+	
 	private String gender;
+	
 	private AddressDTO defaultAddress;
 
+	private long count;
 	public long getId() {
 		return id;
 	}
@@ -56,5 +65,14 @@ public class UserDTO {
 	public void setDefaultAddress(AddressDTO defaultAddress) {
 		this.defaultAddress = defaultAddress;
 	}
+
+	public long getCount() {
+		return count;
+	}
+
+	public void setCount(long count) {
+		this.count = count;
+	}
+
 
 }

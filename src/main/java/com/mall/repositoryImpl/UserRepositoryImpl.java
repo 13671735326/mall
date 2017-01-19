@@ -4,10 +4,10 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
-import com.mall.dtos.AddressDTO;
 import com.mall.entities.AddressEntity;
 import com.mall.entities.UserEntity;
 import com.mall.repositories.UserRepository;
@@ -17,8 +17,6 @@ public class UserRepositoryImpl implements UserRepository {
 
 	@PersistenceContext
 	private EntityManager em;
-	
-	
 
 	public EntityManager getEm() {
 		return em;
@@ -32,11 +30,11 @@ public class UserRepositoryImpl implements UserRepository {
 		em.persist(userEntity);
 		return userEntity;
 	}
-	
+
 	public AddressEntity createAddress(AddressEntity addressEntity) {
 		em.persist(addressEntity);
 		return addressEntity;
-		
+
 	}
 
 	public void deleteUser(Long id) {
@@ -59,6 +57,15 @@ public class UserRepositoryImpl implements UserRepository {
 
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<UserEntity> getPagedUsers(Integer currentPage, Integer pageSize) {
+		Query query = em.createQuery("from UserEntity", UserEntity.class);
+		query.setFirstResult((currentPage - 1) * pageSize);
+		query.setMaxResults(pageSize);
+		return query.getResultList();
+
+	}
+
 	public UserEntity getUser(Long idUser) {
 
 		return em.find(UserEntity.class, idUser);
@@ -70,6 +77,16 @@ public class UserRepositoryImpl implements UserRepository {
 		UserEntity newUser = em.find(UserEntity.class, id);
 		List<AddressEntity> addresses = newUser.getAddressEntityList();
 		return addresses;
+	}
+
+	public UserEntity getUserByName(String name) {
+
+		for (UserEntity user : em.createQuery("from UserEntity", UserEntity.class).getResultList()) {
+			if (name.equals(user.getNickName())) {
+				return user;
+			}
+		}
+		return null;
 	}
 
 }

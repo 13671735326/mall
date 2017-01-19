@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User</title>
+<link rel="stylesheet" type="text/css"
+	href="lib\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css\table.css">
+</head>
+<body>
+	<div class="container">
+		<h1>
+			User Profile<small>Secondary text</small>
+		</h1>
+
+		<table id="table" class="table table-condensed">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nick name</th>
+					<th>gender</th>
+					<th>Email</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Id</td>
+					<td>Nick name</td>
+					<td>gender</td>
+					<td>Email</td>
+				</tr>
+			</tbody>
+
+		</table>
+		<div class="btn-toolbar" role="toolbar" id="abc">
+			<div class="btn-group" id="abc">
+				<button type="button" class="btn btn-default" id="botton"></button>
+				<div id="pages"></div>
+			</div>
+
+		</div>
+
+		<div align="center">
+			<p id="dq"></p>
+			<a id="btn1">首页</a> 
+			<a id="btn2">上一页</a> 
+			<a id="btn3">下一页</a> 
+			<a id="btn4">尾页</a> 
+			<a>转到 </a> 
+			<input id="changePage" type="text" size="1" maxlength="4" /> 
+			<a>页 </a> 
+			<a id="btn5">跳转</a>
+		</div>
+
+
+		<div class="M-box" style="float: right"></div>
+	</div>
+
+	<script src="lib\jquery3.1.1\jquery-3.1.1.min.js"></script>
+	<script src="lib\bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
+	<script src="js\uu.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			getUsers();
+
+		});
+	</script>
+
+</body>
+</html>

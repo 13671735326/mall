@@ -2,18 +2,20 @@ package com.mall.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mall.dtos.AddressDTO;
 import com.mall.dtos.UserDTO;
-import com.mall.exceptions.NotFoundExcption;
 import com.mall.services.UserService;
 
 @RestController
@@ -31,7 +33,13 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
-	public UserDTO getUse(@PathVariable long id) {
+	@Valid
+	public UserDTO getUse(@PathVariable Long id) {
+//		if(id ==null) {
+//			
+//		}
+		
+		
 		return userService.getUser(id);
 	}
 	@RequestMapping(path = "/{id}/addresses", method = RequestMethod.GET)
@@ -40,19 +48,13 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "", method = RequestMethod.GET)
-	public List<UserDTO> getUsers() {
-		return userService.getUsers();
+	public List<UserDTO> getUsers(@RequestParam(required=false) Integer currentPage, @RequestParam(required=false) Integer pageSize) {
+		return userService.getUsers(currentPage, pageSize);
 	}
 
 	@RequestMapping(path = "", method = RequestMethod.POST)
 	@ResponseStatus(code=HttpStatus.CREATED)
-	public UserDTO createUser(@RequestBody UserDTO user) {
-
-		for (UserDTO userDTO : userService.getUsers()) {
-			if(userDTO.getId() ==user.getId()) {
-				throw new NotFoundExcption();
-			}
-		}
+	public UserDTO createUser(@Valid @RequestBody UserDTO user) {
 		return userService.createUser(user);
 
 	}

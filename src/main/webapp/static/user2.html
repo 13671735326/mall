@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User</title>
+<link rel="stylesheet" type="text/css"
+	href="lib\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+</head>
+<body>
+	<div align="center" class="container">
+		<h1>user</h1>
+		<div class="alert alert-danger hide" role="alert">...</div>
+		<div class="form-horizontal hide">
+			<table border="1" cellpadding="25" cellspacing="" width="400px">
+				<tr>
+					<td align="center"><label for="name">Nick Name:</label></td>
+					<td align="center"><label id="nick_name"></label></td>
+				</tr>
+				<tr>
+					<td align="center">email:</td>
+					<td align="center"><label id="email"></label></td>
+				</tr>
+				<tr>
+					<td align="center">gender:</td>
+					<td align="center"><label id="gender"></label></td>
+				</tr>
+				<tr class="hide">
+					<td align="center" id="default_address_id">defaultAddress:</td>
+					<td align="center"><label></label></td>
+				</tr>
+				<tr>
+					<td align="center">address:</td>
+					<td align="center"><label id="address"></label></td>
+				</tr>
+				<tr>
+					<td align="center">telephone:</td>
+					<td align="center"><label id="telephone"></label></td>
+				</tr>
+			</table>
+			<table border="0" cellpadding="25" cellspacing="0" width="400px">
+				<tr>
+					<td align="center">
+						<div>
+							<button type="button" class="btn btn-primary btn-lg"
+								data-toggle="modal" data-target="#myModal">删除</button>
+						</div>
+					</td>
+					<td align="center">
+						<div>
+							<button type="button" class="btn btn-primary btn-lg left"
+								data-toggle="modal" data-target="#myModalcha">1234</button>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								<p>提示框</p>
+							</h4>
+						</div>
+						<div class="modal-body">
+							确认删除xxx？<label class="nickname"></label>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" id="confirm"
+								data-dismiss="modal">删除</button>
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="lib\jquery3.1.1\jquery-3.1.1.min.js"></script>
+	<script src="lib\bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
+	<script src="js\user.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			getUser();
+		});
+	</script>
+</body>
+</html>

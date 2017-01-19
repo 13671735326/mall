@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User</title>
+<link rel="stylesheet" type="text/css"
+	href="lib\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>
+			用户<small>Secondary text</small>
+		</h1>
+		<div class="alert alert-danger hide" role="alert">...</div>
+		<div class="form-horizontal hide">
+			<input type="hidden" value="1" id="user_id" />
+			<div class="form-group">
+				<label>Nick Name:</label> <label id="nick_name"></label>
+			</div>
+
+			<div>
+				<label>email:</label> <label id="email"></label>
+			</div>
+
+			<div>
+				<label>gender:</label> <label id="gender"></label>
+			</div>
+
+			<div>
+				<label id="defaultAddress">defaultAddress:</label> <input
+					type="hidden" value="1" id="default_address_id" />
+				<div>
+					<label>address:</label> <label id="address"></label>
+				</div>
+				<div>
+					<label>telephone:</label> <label id="telephone"></label>
+				</div>
+
+			</div>
+			<div>
+				<button type="button" class="btn btn-primary btn-lg"data-toggle="modal" data-target="#myModal">删除</button>
+			</div>
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+							<p>提示框</p></h4>
+						</div>
+						<div class="modal-body">
+							确认删除？xxx<label class="nickname"></label>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" id="confirm" data-dismiss="modal">删除</button>
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+	<script src="lib\jquery3.1.1\jquery-3.1.1.min.js"></script>
+	<script src="lib\bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
+	<script src="js\user.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			getUser();
+		});
+	</script>
+</body>
+</html>

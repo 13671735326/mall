@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User</title>
+<link rel="stylesheet" type="text/css"
+	href="lib\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+</head>
+<body>
+	<div align="center">
+		<table border="1" cellpadding="25" cellspacing="" width="1000px">
+			<tr>
+				<td align="center"><label for="name">Nick Name:</label></td>
+				<td align="center">email:</td>
+				<td align="center">gender:</td>
+				<td align="center" id="default_address_id" class="hide">defaultAddress:</td>
+				<td align="center">address:</td>
+				<td align="center">telephone:</td>
+			</tr>
+			<tr id="orig">
+				<td align="center"><label id="nick_name"></label></td>
+				<td align="center"><label id="email"></label></td>
+				<td align="center"><label id="gender"></label></td>
+				<td align="center" class="hide"><label></label></td>
+				<td align="center"><label id="address"></label></td>
+				<td align="center"><label id="telephone"></label></td>
+			</tr>
+			<tr id="copy">
+				
+			</tr>
+		</table>
+	</div>
+	<script src="lib\jquery3.1.1\jquery-3.1.1.min.js"></script>
+	<script src="lib\bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
+	<script src="js\user.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			fetch2();
+		});
+	</script>
+</body>
+</html>
